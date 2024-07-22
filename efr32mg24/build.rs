@@ -55,6 +55,7 @@ fn main() {
             .args(compile_options)
             .arg(source)
             .arg("-c")
+            .arg("-Os")
             .arg("-o")
             .arg(&format!("{}/{}", out_dir, obj_name))
             .status().unwrap().success() {

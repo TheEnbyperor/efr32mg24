@@ -77,9 +77,9 @@ unsafe fn HardFault(ef: &cortex_m_rt::ExceptionFrame) -> ! {
 }
 
 #[cortex_m_rt::exception]
-unsafe fn DefaultHandler(irqn: i16) {
-    match irqn {
+unsafe fn DefaultHandler(irq_n: i16) {
+    match irq_n {
         4 => sys::TIMER0_IRQHandler(),
-        n => cortex_m_semihosting::hprintln!("IRQ: {}", n),
+        n => cortex_m_semihosting::hprintln!("Unhandled IRQ: {}", n),
     }
 }

@@ -17,8 +17,3 @@ bindgen = "0.69.4"
 name = "efr32mg24"
 test = false
 bench = false
-
-[profile.release]
-codegen-units = 1
-debug = true
-lto = true

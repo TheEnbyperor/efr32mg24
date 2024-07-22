@@ -4,3 +4,9 @@ members = [
     "efr32mg24",
     "efr32mg24b210f1536im48_sys"
 ]
+
+[profile.release]
+opt-level = "z"
+codegen-units = 1
+debug = true
+lto = true
