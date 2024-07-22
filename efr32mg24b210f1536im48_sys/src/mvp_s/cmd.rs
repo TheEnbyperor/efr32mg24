@@ -1,0 +1,51 @@
+#[doc = "Register `CMD` writer"]
+pub type W = crate::W<CmdSpec>;
+#[doc = "Field `START` writer - Start Command"]
+pub type StartW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `HALT` writer - Halt Command"]
+pub type HaltW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `STEP` writer - Step Command"]
+pub type StepW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `INIT` writer - Initialization Command/Qualifier"]
+pub type InitW<'a, REG> = crate::BitWriter<'a, REG>;
+impl W {
+    #[doc = "Bit 0 - Start Command"]
+    #[inline(always)]
+    #[must_use]
+    pub fn start(&mut self) -> StartW<CmdSpec> {
+        StartW::new(self, 0)
+    }
+    #[doc = "Bit 1 - Halt Command"]
+    #[inline(always)]
+    #[must_use]
+    pub fn halt(&mut self) -> HaltW<CmdSpec> {
+        HaltW::new(self, 1)
+    }
+    #[doc = "Bit 2 - Step Command"]
+    #[inline(always)]
+    #[must_use]
+    pub fn step(&mut self) -> StepW<CmdSpec> {
+        StepW::new(self, 2)
+    }
+    #[doc = "Bit 3 - Initialization Command/Qualifier"]
+    #[inline(always)]
+    #[must_use]
+    pub fn init(&mut self) -> InitW<CmdSpec> {
+        InitW::new(self, 3)
+    }
+}
+#[doc = "Command Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CmdSpec;
+impl crate::RegisterSpec for CmdSpec {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [`cmd::W`](W) writer structure"]
+impl crate::Writable for CmdSpec {
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+}
+#[doc = "`reset()` method sets CMD to value 0"]
+impl crate::Resettable for CmdSpec {
+    const RESET_VALUE: u32 = 0;
+}

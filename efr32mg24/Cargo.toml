@@ -1,0 +1,24 @@
+[package]
+name = "efr32mg24"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7.3"
+cortex-m-semihosting = "0.5.0"
+panic-semihosting = "0.6.0"
+efr32mg24b210f1536im48-sys = { path = "../efr32mg24b210f1536im48_sys", features = ["rt", "critical-section"]}
+
+[build-dependencies]
+bindgen = "0.69.4"
+
+[[bin]]
+name = "efr32mg24"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true

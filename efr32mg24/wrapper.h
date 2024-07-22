@@ -1,0 +1,5 @@
+#include "system_efr32mg24.h"
+#include "sl_status.h"
+#include "sl_system_init.h"
+#include "sl_power_manager.h"
+#include "sl_sleeptimer.h"
